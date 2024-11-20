@@ -57,13 +57,29 @@ http://<Node-RED-서버-IP>:1880/ui
 
    핀 이름	          용도
 trigPin1 (22)	      초음파 센서 1 트리거 핀
+
+
 echoPin1 (23)	      초음파 센서 1 에코 핀
+
+
 trigPin2 (13)	      초음파 센서 2 트리거 핀
+
+
 echoPin2 (12)	      초음파 센서 2 에코 핀
+
+
 extraMotorPin1 (10)	추가 모터 드라이버 IN1 핀
+
+
 extraMotorPin2 (11)	추가 모터 드라이버 IN2 핀
+
+
 motorPin1 (6)	      모터 드라이버 IN1 핀
+
+
 motorPin2 (7)	      모터 드라이버 IN2 핀
+
+
 shockSensorPin (A0)	충격 감지 센서 핀
 
 ----------
@@ -80,15 +96,17 @@ MQTT 브로커와 ESP8266 모듈 간 데이터 전송이 성공적으로 이루�
 초음파 센서를 통해 쓰레기 높이를 측정.
 측정 데이터를 MQTT를 통해 Node-RED 대시보드로 전송.
 채움 상태가 임계값을 초과하면 모터로 쓰레기를 자동으로 압축.
+
 -------------
 
-### 파일 구조
-코드 복사
+ 파일 구조
+
 / 프로젝트 폴더
 ├── ArduinoCode.ino        # Arduino 메인 코드
 ├── ESP8266Code.ino        # ESP8266 메인 코드
 ├── Node-RED-Flow.json     # Node-RED 대시보드 구성 JSON
 └── README.md              # 프로젝트 설명 파일
+
 ------------
 
 ### 결과
