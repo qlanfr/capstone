@@ -35,5 +35,63 @@
 
 ### 2. Node-RED 설정
 1. **Node-RED 설치**:
-   ```bash
    npm install -g node-red
+대시보드 플러그인 설치:
+   npm install node-red-dashboard
+
+
+### MQTT 노드 설정:
+   MQTT 브로커 정보를 입력하여 데이터를 수신하는 mqtt in 노드와 연결.
+
+### 게이지 및 텍스트 노드 설정:
+   mqtt in 노드에서 수신한 데이터를 게이지 및 텍스트 노드로 연결.
+### Node-RED 실행:
+   node-red
+### 웹 대시보드 접속
+http://<Node-RED-서버-IP>:1880/ui
+
+------
+### 주요 변수 및 핀 설정
+## Arduino 핀 설정
+
+
+   핀 이름	          용도
+trigPin1 (22)	      초음파 센서 1 트리거 핀
+echoPin1 (23)	      초음파 센서 1 에코 핀
+trigPin2 (13)	      초음파 센서 2 트리거 핀
+echoPin2 (12)	      초음파 센서 2 에코 핀
+extraMotorPin1 (10)	추가 모터 드라이버 IN1 핀
+extraMotorPin2 (11)	추가 모터 드라이버 IN2 핀
+motorPin1 (6)	      모터 드라이버 IN1 핀
+motorPin2 (7)	      모터 드라이버 IN2 핀
+shockSensorPin (A0)	충격 감지 센서 핀
+
+----------
+
+### 테스트 결과
+1. MQTT 연결 상태
+MQTT 브로커와 ESP8266 모듈 간 데이터 전송이 성공적으로 이루어짐.
+수신 주제(topic): 202008059/adcValue
+예시 수신 데이터: 30 (%)
+2. Node-RED 대시보드 상태
+게이지에서 쓰레기통의 채움 상태가 **30%**로 표시.
+데이터 로그에 수신된 데이터가 시간별로 기록.
+3. 시스템 시연
+초음파 센서를 통해 쓰레기 높이를 측정.
+측정 데이터를 MQTT를 통해 Node-RED 대시보드로 전송.
+채움 상태가 임계값을 초과하면 모터로 쓰레기를 자동으로 압축.
+-------------
+
+### 파일 구조
+코드 복사
+/ 프로젝트 폴더
+├── ArduinoCode.ino        # Arduino 메인 코드
+├── ESP8266Code.ino        # ESP8266 메인 코드
+├── Node-RED-Flow.json     # Node-RED 대시보드 구성 JSON
+└── README.md              # 프로젝트 설명 파일
+------------
+
+### 결과
+MQTT와 Node-RED 연동 성공: 실시간 쓰레기통 상태 모니터링 구현.
+대시보드 시각화: 사용자 친화적인 인터페이스로 채움 상태 확인 및 관리 가능.
+쓰레기 관리 자동화: 자동 압축 기능을 통해 쓰레기통의 공간 효율 극대화.
