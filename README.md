@@ -125,10 +125,19 @@ MQTT 브로커와 ESP8266 모듈 간 데이터 전송이 성공적으로 이루�
 
  파일 구조
 
+
 / 프로젝트 폴더
+
+
 ├── ArduinoCode.ino        # Arduino 메인 코드
+
+
 ├── ESP8266Code.ino        # ESP8266 메인 코드
+
+
 ├── Node-RED-Flow.json     # Node-RED 대시보드 구성 JSON
+
+
 └── README.md              # 프로젝트 설명 파일
 
 
